@@ -2,8 +2,7 @@
 ' C4-PlantUML, version 1.0.0
 ' https://github.com/RicardoNiepel/C4-PlantUML
 
-!define pumls https://raw.githubusercontent.com/romanruthofer/c4-puml/master
-!includeurl pumls/C4_Container.puml
+!includeurl https://raw.githubusercontent.com/romanruthofer/c4-puml/master/C4_Container.puml
 
 ' Styling
 ' ##################################
