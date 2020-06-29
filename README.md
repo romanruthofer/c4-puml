@@ -11,9 +11,3 @@ just use it in your plant uml file
 !includeurl https://raw.githubusercontent.com/romanruthofer/c4-puml/master/C4_Context.puml
 ```
 
-
-# Build and Test
-not needed
-
-# Contribute
-everybody is welcome!
