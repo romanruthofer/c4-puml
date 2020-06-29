@@ -1,0 +1,38 @@
+' this is a extended version of: RicardoNiepel C4 Plantuml extension
+' C4-PlantUML, version 1.0.0
+' https://github.com/RicardoNiepel/C4-PlantUML
+
+!includeurl ./C4_Container.puml
+
+' Styling
+' ##################################
+
+skinparam rectangle<<node>> {
+    Shadowing false
+    StereotypeFontSize 0
+    FontColor #444444
+    BorderColor #444444
+    BorderThickness 0.5
+    roundCorner 10
+    FontSize 12
+}
+
+skinparam rectangle<<nodepassive>> {
+    Shadowing false
+    StereotypeFontSize 0
+    FontColor ELEMENT_PASSIVE_FONT_COLOR
+    BorderColor #a7a7a7
+    BorderThickness 0.5
+    roundCorner 10
+    FontSize 12
+}
+
+
+' Nodes
+' ###################################
+
+!define Node(e_alias, e_label, e_os) rectangle "==e_label\n<size:TECHN_FONT_SIZE>[Deployment Node: e_os]</size>" <<node>> as e_alias
+!define Node(e_alias, e_label, e_os, e_number) rectangle "==e_label\n<size:TECHN_FONT_SIZE>[Deployment Node: e_os]</size>" <<node>> as e_alias
+!define Node_Passive(e_alias, e_label, e_os) rectangle "==e_label\n<size:TECHN_FONT_SIZE>[Deployment Node: e_os]</size>" <<nodepassive>> as e_alias
+!define Node_Passive(e_alias, e_label, e_os, e_number) rectangle "==e_label\n<size:TECHN_FONT_SIZE>[Deployment Node: e_os]</size>" <<nodepassive>> as e_alias
+

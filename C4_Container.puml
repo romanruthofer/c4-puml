@@ -1,0 +1,101 @@
+' this is a extended version of: RicardoNiepel C4 Plantuml extension
+' C4-PlantUML, version 1.0.0
+' https://github.com/RicardoNiepel/C4-PlantUML
+
+!includeurl ./C4_Context.puml
+' uncomment the following line and comment the first to use locally
+' !include C4_Context.puml
+
+' Scope: A single software system.
+' Primary elements: Containers within the software system in scope.
+' Supporting elements: People and software systems directly connected to the containers.
+' Intended audience: Technical people inside and outside of the software development team; including software architects, developers and operations/support staff.
+
+' Colors
+' ##################################
+
+!define CONTAINER_BG_COLOR #438dd5
+!define CONTAINER_BORDER_COLOR #4484c3
+!define CONTAINER_PASSIVE_BG_COLOR #88bff4
+!define CONTAINER_PASSIVE_BORDER_COLOR #87B2DD
+!define CONTAINER_FONT_SIZE 12
+
+
+' Styling
+' ##################################
+
+skinparam rectangle<<container>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor ELEMENT_FONT_COLOR
+    BackgroundColor CONTAINER_BG_COLOR
+    BorderColor CONTAINER_BORDER_COLOR
+        FontSize CONTAINER_FONT_SIZE
+}
+
+skinparam database<<container>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor ELEMENT_FONT_COLOR
+    BackgroundColor CONTAINER_BG_COLOR
+    BorderColor CONTAINER_BORDER_COLOR
+    FontSize CONTAINER_FONT_SIZE
+}
+
+skinparam rectangle<<containerapp>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor ELEMENT_FONT_COLOR
+    BackgroundColor CONTAINER_BG_COLOR
+    BorderColor CONTAINER_BORDER_COLOR
+    roundCorner 10
+    BorderThickness 5
+    FontSize CONTAINER_FONT_SIZE
+}
+
+skinparam database<<containerpassive>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor ELEMENT_FONT_COLOR
+    BackgroundColor CONTAINER_PASSIVE_BG_COLOR
+    BorderColor CONTAINER_PASSIVE_BORDER_COLOR
+    FontSize CONTAINER_FONT_SIZE
+}
+
+skinparam rectangle<<containerpassive>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor ELEMENT_FONT_COLOR
+    BackgroundColor CONTAINER_PASSIVE_BG_COLOR
+    BorderColor CONTAINER_PASSIVE_BORDER_COLOR
+    FontSize CONTAINER_FONT_SIZE
+}
+
+' Layout
+' ##################################
+
+!definelong LAYOUT_WITH_LEGEND
+hide stereotype
+legend right
+|=              |= Type |
+|<PERSON_BG_COLOR>      | person |
+|<EXTERNAL_PERSON_BG_COLOR>      | external person |
+|<SYSTEM_BG_COLOR>   | system |
+|<EXTERNAL_SYSTEM_BG_COLOR>      | external system |
+|<CONTAINER_BG_COLOR>   | container |
+endlegend
+!enddefinelong
+
+' Elements
+' ##################################
+
+!define Container(e_alias, e_label, e_techn) rectangle "==e_label\n\n<size:TECHN_FONT_SIZE>[Container: e_techn]>></size>" <<container>> as e_alias
+!define Container(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n<size:TECHN_FONT_SIZE>[Container: e_techn]</size>\n\n e_descr" <<container>> as e_alias
+!define ContainerPassive(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n<size:TECHN_FONT_SIZE>[Container: e_techn]</size>\n\n e_descr" <<containerpassive>> as e_alias
+
+
+!define ContainerDb(e_alias, e_label, e_techn) database "==e_label\n<size:TECHN_FONT_SIZE>[ContainerDB: e_techn]</size>" <<container>> as e_alias
+!define ContainerDb(e_alias, e_label, e_techn, e_descr) database "==e_label\n<size:TECHN_FONT_SIZE>[ContainerDB: e_techn]</size>\n\n e_descr" <<container>> as e_alias
+!define ContainerDbPassive(e_alias, e_label, e_techn, e_descr) database "==e_label\n<size:TECHN_FONT_SIZE>[ContainerDB: e_techn]</size>\n\n e_descr" <<containerpassive>> as e_alias
+
+!define ContainerApp(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n<size:TECHN_FONT_SIZE>[Container: e_techn]</size>\n\n e_descr" <<containerapp>> as e_alias
+
+' Boundaries
+' ##################################
+
+!define Container_Boundary(e_alias, e_label) Boundary(e_alias, e_label, "Container")
