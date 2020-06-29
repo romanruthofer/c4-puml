@@ -2,7 +2,8 @@
 ' C4-PlantUML, version 1.0.0
 ' https://github.com/RicardoNiepel/C4-PlantUML
 
-!includeurl ./C4_Component.puml
+!define pumls https://raw.githubusercontent.com/romanruthofer/c4-puml/master
+!includeurl pumls/C4_Component.puml
 ' uncomment the following line and comment the first to use locally
 ' !include C4_Component.puml
 
