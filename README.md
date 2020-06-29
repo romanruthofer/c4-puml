@@ -9,7 +9,7 @@ just use it in your plant uml file
 > not working yet, put this is nearly close
 
 ```
-!includeurl https://dev.azure.com/evonGmbH/XAMControl/_apis/git/repositories/c4-pumls/items?scopePath=/C4_Deployment.pumls
+!includeurl https://raw.githubusercontent.com/romanruthofer/c4-puml/master/C4_Context.puml
 ```
 
 
