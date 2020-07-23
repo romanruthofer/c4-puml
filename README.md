@@ -38,7 +38,7 @@ based on Container diagram
 * Import: `!includeurl !includeurl https://raw.githubusercontent.com/romanruthofer/c4-puml/master/C4_Component.puml`
 * Additional Macros: Component, ComponentDb
 
-## Dynamic diagram 
+### Dynamic diagram 
 based on Component diagram
 * Import: `!includeurl !includeurl https://raw.githubusercontent.com/romanruthofer/c4-puml/master/C4_Deployment.puml`
 * Additional Macros: Interact, Interact_Back
