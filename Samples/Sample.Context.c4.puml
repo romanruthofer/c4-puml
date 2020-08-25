@@ -1,0 +1,12 @@
+@startuml Sample Context
+!includeurl ../C4_Context.puml
+
+LAYOUT_TOP_DOWN
+
+Person(admin,"Administrator")
+Person(admin1,"Administrator","a system administrator with lots of knowledge")
+
+Person_Ext(admin2,"Administrator")
+Person_Ext(admin3,"Administrator","a system administrator with lots of knowledge")
+
+@endumml
