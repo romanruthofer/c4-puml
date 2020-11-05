@@ -32,7 +32,7 @@ skinparam rectangle<<nodepassive>> {
 ' ###################################
 
 !define Node(e_alias, e_label, e_os) rectangle "==e_label\n<size:TECHN_FONT_SIZE>[Deployment Node: e_os]</size>" <<node>> as e_alias
-!define Node(e_alias, e_label, e_os, e_number) rectangle "==e_label\n<size:TECHN_FONT_SIZE>[Deployment Node: e_os]</size>x==e_number" <<node>> as e_alias
+!define Node(e_alias, e_label, e_os, e_number) rectangle "==e_label\n<size:TECHN_FONT_SIZE>[Deployment Node: e_os]</size>x e_number" <<node>> as e_alias
 !define Node_Passive(e_alias, e_label, e_os) rectangle "==e_label\n<size:TECHN_FONT_SIZE>[Deployment Node: e_os]</size>" <<nodepassive>> as e_alias
-!define Node_Passive(e_alias, e_label, e_os, e_number) rectangle "==e_label\n<size:TECHN_FONT_SIZE>[Deployment Node: e_os]</size>x==e_number" <<nodepassive>> as e_alias
+!define Node_Passive(e_alias, e_label, e_os, e_number) rectangle "==e_label\n<size:TECHN_FONT_SIZE>[Deployment Node: e_os]</size>x e_number" <<nodepassive>> as e_alias
 
